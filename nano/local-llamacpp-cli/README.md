@@ -9,9 +9,18 @@ llama.cpp is a open source program to run llm application on cpu.
 ## Getting Started  
   
 This helps setup a running vicuna chat program in local MacOS Intel CPU.  
-  
-# macOS Monterey Version: 12.4   
-# uname -a   
+
+## CPU, RAM, Nvidia GPU, Internet, OpenAI
+The programs tested on following hardware. When asked AI to answer questions, you will hear machine fans play noises, this is normal because AI is working hard to compute and find best answers for you.
+
+MacBookPro: 2018
+macOS Monterey Version: 12.4   
+CPU: 6 cores  (No Nvidia GPU)
+RAM: 32 GB 
+
+Nvidia GPU (cuda), Internet, OpenAI are not required.
+
+## uname -a   
 Darwin user-2.local 21.5.0 Darwin Kernel Version 21.5.0: Tue Apr 26 21:08:22 PDT 2022;   
 root:xnu-8020.121.3~4/RELEASE_X86_64 x86_64  
   

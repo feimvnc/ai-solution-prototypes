@@ -10,7 +10,7 @@ A colleciton of AI solution prototypes from simple CLI to end to end solutions.
     
 ### Dependencies    
     
-* No hard dependencies.    
+* RAM     
 * MacOS, windows should work, there can be library version differences.    
 * python 3.10.11, this version is comptabile to most ML libraries, mentioned by Matthew Berman in his videos at https://www.youtube.com/@matthew_berman as of July 2023.    
     
@@ -54,3 +54,5 @@ This project is licensed under the Apache 2.0 License.
     
 Inspiration, code snippets, etc.    
 * https://www.youtube.com/@matthew_berman    
+
+* "What I cannot create, I do not understand". Richard Feynman 
