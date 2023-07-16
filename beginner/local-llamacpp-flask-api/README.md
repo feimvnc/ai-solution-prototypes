@@ -56,7 +56,7 @@ This program built for i386-apple-darwin11.3.0
 $make clean   # clean previous build if you like  
 $make    # let's build, ignore warnings for now  
   
-#ls -ltr     # check compiled executables, look for 2 files we need  
+$ls -ltr     # check compiled executables, look for 2 files we need  
 -rw-r--r--   1 user  staff      123 16 Jul 08:33 build-info.h  
 -rw-r--r--   1 user  staff   540904 16 Jul 08:33 ggml.o        
 -rw-r--r--   1 user  staff   209560 16 Jul 08:33 llama.o  
@@ -73,13 +73,14 @@ $make    # let's build, ignore warnings for now
 -rwxr-xr-x   1 user  staff  1481032 16 Jul 08:34 server     # -> ai web engine, we need   
 -rwxr-xr-x   1 user  staff   707912 16 Jul 08:34 libembdinput.so  
 -rwxr-xr-x   1 user  staff   722960 16 Jul 08:34 embd-input-test  
-(gpt-local) user-2:llama.cpp user$   
+
   
 There is a script already provided, let use it.  
 cd examples    # change the folder   
 cp chat-13B.sh chat-13B.sh.bak     # make a backup   
 open chat-13B.sh, change line 7 like below, make sure you have   
-$ diff  chat-13B.sh chat-13B.sh.bak  
+
+$diff  chat-13B.sh chat-13B.sh.bak  
 7c7  
 < MODEL="${MODEL:-./models/13B/ggml-vic13b-uncensored-q5_0.bin}"  
 ---  
