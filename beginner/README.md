@@ -11,3 +11,4 @@ The soluition include basic API usage, simple frameworks.
 Basic knowledge of python and common frameworks helps.  
   
 But we can try to make local env working using mock sample data if posssible.  
+

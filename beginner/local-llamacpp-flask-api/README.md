@@ -80,11 +80,13 @@ cd examples    # change the folder
 cp chat-13B.sh chat-13B.sh.bak     # make a backup   
 open chat-13B.sh, change line 7 like below, make sure you have   
 
+```
 $diff  chat-13B.sh chat-13B.sh.bak  
 7c7  
 < MODEL="${MODEL:-./models/13B/ggml-vic13b-uncensored-q5_0.bin}"  
 ---  
 > MODEL="${MODEL:-./models/13B/ggml-model-q4_0.bin}"  
+```
   
 ## What is new?   
 llama.cpp code and build (new features)  

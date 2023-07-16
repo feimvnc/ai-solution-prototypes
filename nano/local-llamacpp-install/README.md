@@ -194,5 +194,9 @@ options:
                         model path (default: models/7B/ggml-model.bin)  
   
   
-  
+make output new files created  
+![Screenshot](llamacpp-local-compile.png)  
+
+ai agent question and answer session 
 ![Screenshot](llamacpp-local-install.png)  
+
