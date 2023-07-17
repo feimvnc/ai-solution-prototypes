@@ -160,7 +160,8 @@ Initial load may take little longer, this depends on your PC RAM, CPU speed
 Click Reset when response took long time or no response.  
 Check logs on server terminal, segmentation fault may occur, just start the program again.  
 Depending on your PC RAM and CPU, program runs and responses very differently.  
-  
+Restart program when you see "line 1: 18921 Segmentation fault: 11 ...", likely related to local PC hardware memory limitation.
+
 This is your own AI toy and friend, running on your PC, hassle free, enjoy.  
   
 homepage screen - http://127.0.0.1:8080/   
