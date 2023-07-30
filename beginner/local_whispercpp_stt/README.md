@@ -34,7 +34,11 @@ main: processing 'samples/jfk.wav' (176000 samples, 11.0 sec), 4 threads, 1 proc
 say -o test.aiff "AI will probably most likely lead to the end of the world, but in the meantime, there'll be great companies."
 afplay test.aiff
 ffmpeg -i test.aiff -acodec pcm_s16le -ar 16000 test.wav
-./main -m models/ggml-base.en.bin -f ./test.wav
+
+Or  
+ffmpeg -i SOURCE_FILE.wav -ar 16000 output.wav
+
+./main -m models/ggml-base.en.bin -f ./test.wav --print-colors
 
 Output:  # "I", should be "AI", the first word needs to update
 [00:00:00.000 --> 00:00:05.480]   I will probably most likely lead to the end of the world, but in the meantime, there will
@@ -85,4 +89,16 @@ main: n_new_line = 9, no_context = 1
  [BLANK_AUDIO]
  [Music]
  (upbeat music)
+```
+
+## Speaker segmentation via tinydiarize (experimental)
+
+```bash
+# download a tinydiarize compatible model
+./models/download-ggml-model.sh small.en-tdrz
+
+# run as usual, adding the "-tdrz" command-line argument
+./main -f ./samples/a13.wav -m ./models/ggml-small.en-tdrz.bin -tdrz
+./main -f ./samples/jfk.wav -m ./models/ggml-small.en-tdrz.bin -tdrz
+
 ```
