@@ -53,4 +53,36 @@ python convert_mp3_file_folder_to_wav.py a.mp3 b.mp3
 Convert all *.mp3 files in a current folder  
 python convert_mp3_file_folder_to_wav.py ./
 
+## For stream
 
+```bash 
+make stream 
+
+# if error ./examples/common-sdl.h:3:10: fatal error: 'SDL2/SDL.h' file not found, do this
+brew install sdl2
+
+# if error Error: Could not symlink include/SDL2/SDL_ttf.h, do this
+brew link --overwrite sdl2
+
+./stream -m ./models/ggml-base.en.bin -t 8 --step 500 --length 5000
+
+Output:
+$ ./stream -m ./models/ggml-base.en.bin -t 8 --step 500 --length 5000
+init: found 2 capture devices:
+init:    - Capture device #0: 'External Microphone'
+init:    - Capture device #1: 'MacBook Pro Microphone'
+init: attempt to open default capture device ...
+init: obtained spec for input device (SDL Id = 2):
+...
+whisper_init_from_file_no_state: loading model from './models/ggml-base.en.bin'
+..
+
+main: processing 8000 samples (step = 0.5 sec / len = 5.0 sec / keep = 0.2 sec), 8 threads, lang = en, task = transcribe, timestamps = 0 ...
+main: n_new_line = 9, no_context = 1
+
+ [BLANK_AUDIO]
+ A long time. I don't know. 
+ [BLANK_AUDIO]
+ [Music]
+ (upbeat music)
+```
