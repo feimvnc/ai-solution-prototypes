@@ -1,0 +1,4 @@
+# exclude everything except directory foo/bar
+terraform/.terraform
+terraform.terraform.lock.hcl
+terraform.tfstate*
