@@ -1,0 +1,1 @@
+Create some AI related projects for common use cases.
