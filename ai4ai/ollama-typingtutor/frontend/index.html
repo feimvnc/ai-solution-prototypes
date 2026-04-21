@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Typing Tutor - Master Your Keyboard</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Compact Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">⌨️ AI Typing Tutor</h1>
+                
+                <!-- Mode Selector in Header -->
+                <div class="header-mode-selector">
+                    <button class="header-mode-btn active" data-mode="text">📚 Texts</button>
+                    <button class="header-mode-btn" data-mode="keys">🎯 Drills</button>
+                    <button class="header-mode-btn" data-mode="ai">🤖 AI</button>
+                </div>
+                
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">WPM</span>
+                        <span class="stat-value" id="wpm-display">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Acc</span>
+                        <span class="stat-value" id="accuracy-display">100%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">AI</span>
+                        <span class="stat-value" id="ai-status">🔴</span>
+                    </div>
+                </div>
+                
+                <!-- Sound Controls -->
+                <div class="sound-controls">
+                    <button class="sound-btn" id="sound-toggle" data-sound="off" title="Toggle Sound">
+                        🔇
+                    </button>
+                    <button class="sound-mode-btn disabled" id="sound-mode" data-mode="letter" title="Letter / Word" disabled>
+                        🔤 Letter
+                    </button>
+                    <button class="translate-btn" id="translate-toggle" data-translate="off" title="Toggle Translation">
+                        🌐 CN
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Practice Area -->
+            <div class="practice-section">
+                <!-- Text Selection (Text Mode) -->
+                <div class="text-selection" id="text-mode">
+                    <h2>Choose a Classic Text</h2>
+                    <div class="text-grid" id="text-grid"></div>
+                </div>
+
+                <!-- Key Drill Mode -->
+                <div class="key-drill-mode hidden" id="key-mode">
+                    <h2>Key Combination Practice</h2>
+                    <div class="key-selector">
+                        <button class="key-drill-btn" data-keys="asdf">Home Row (ASDF)</button>
+                        <button class="key-drill-btn" data-keys="jkl;">Home Row (JKL;)</button>
+                        <button class="key-drill-btn" data-keys="qwerty">Top Row (QWERTY)</button>
+                        <button class="key-drill-btn" data-keys="zxcvbn">Bottom Row (ZXCVBN)</button>
+                        <button class="key-drill-btn" data-keys="numbers">Numbers (0-9)</button>
+                    </div>
+                </div>
+
+                <!-- AI Generated Mode -->
+                <div class="ai-mode hidden" id="ai-mode">
+                    <h2>AI-Generated Practice</h2>
+                    <div class="ai-controls">
+                        <select id="difficulty-select" class="ai-select">
+                            <option value="easy">Easy</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                        <button class="btn btn-primary" id="generate-text-btn">Generate Text</button>
+                    </div>
+                </div>
+
+                <!-- Typing Area - Focus on Text and Keyboard -->
+                <div class="typing-area hidden" id="typing-area">
+                    <!-- Text Display - Main Focus -->
+                    <div class="text-display" id="text-display"></div>
+                    
+                    <!-- Hidden Input for Capturing Keystrokes -->
+                    <input type="text" class="typing-input-hidden" id="typing-input" autocomplete="off" spellcheck="false">
+                    
+                    <!-- Virtual Keyboard - Main Focus -->
+                    <div class="keyboard-container">
+                        <div class="keyboard" id="keyboard"></div>
+                    </div>
+
+                    <!-- Compact Stats and Actions -->
+                    <div class="compact-controls">
+                        <div class="typing-stats-compact">
+                            <div class="stat-box-compact">
+                                <span class="stat-number-compact" id="current-wpm">0</span>
+                                <span class="stat-text-compact">WPM</span>
+                            </div>
+                            <div class="stat-box-compact">
+                                <span class="stat-number-compact" id="current-accuracy">100%</span>
+                                <span class="stat-text-compact">Accuracy</span>
+                            </div>
+                            <div class="stat-box-compact">
+                                <span class="stat-number-compact" id="current-time">0s</span>
+                                <span class="stat-text-compact">Time</span>
+                            </div>
+                            <div class="stat-box-compact">
+                                <span class="stat-number-compact" id="current-errors">0</span>
+                                <span class="stat-text-compact">Errors</span>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons-compact">
+                            <button class="btn btn-secondary btn-compact" id="reset-btn">🔄 Reset</button>
+                            <button class="btn btn-success btn-compact hidden" id="finish-btn">✓ Finish</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Keyboard Legend -->
+            <div class="keyboard-legend-section hidden" id="keyboard-legend">
+                <div class="keyboard-legend">
+                    <span class="legend-item"><span class="legend-color correct"></span> Correct</span>
+                    <span class="legend-item"><span class="legend-color error"></span> Error</span>
+                    <span class="legend-item"><span class="legend-color active"></span> Current</span>
+                </div>
+            </div>
+
+            <!-- AI Insights -->
+            <div class="ai-insights hidden" id="ai-insights">
+                <h3>🤖 AI Typing Coach</h3>
+                <div class="insights-content" id="insights-content">
+                    <p class="loading">Analyzing your typing pattern...</p>
+                </div>
+            </div>
+
+            <!-- Results Modal -->
+            <div class="modal hidden" id="results-modal">
+                <div class="modal-content">
+                    <h2>🎉 Practice Complete!</h2>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-label">Words Per Minute</span>
+                            <span class="result-value" id="final-wpm">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Accuracy</span>
+                            <span class="result-value" id="final-accuracy">0%</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Total Time</span>
+                            <span class="result-value" id="final-time">0s</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Total Errors</span>
+                            <span class="result-value" id="final-errors">0</span>
+                        </div>
+                    </div>
+                    <div class="ai-analysis" id="ai-analysis">
+                        <h4>AI Analysis</h4>
+                        <p id="ai-analysis-text">Loading...</p>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary" id="try-again-btn">Try Again</button>
+                        <button class="btn btn-secondary" id="new-text-btn">New Text</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/sound.js"></script>
+    <script src="js/translation.js"></script>
+    <script src="js/keyboard.js"></script>
+    <script src="js/typing.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

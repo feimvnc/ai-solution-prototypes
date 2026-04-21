@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Pride and Prejudice - Jane Austen",
+    "difficulty": "easy",
+    "text": "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."
+  },
+  {
+    "id": 2,
+    "title": "A Tale of Two Cities - Charles Dickens",
+    "difficulty": "medium",
+    "text": "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity."
+  },
+  {
+    "id": 3,
+    "title": "Moby Dick - Herman Melville",
+    "difficulty": "medium",
+    "text": "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world."
+  },
+  {
+    "id": 4,
+    "title": "The Great Gatsby - F. Scott Fitzgerald",
+    "difficulty": "easy",
+    "text": "In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. Whenever you feel like criticizing anyone, he told me, just remember that all the people in this world haven't had the advantages that you've had."
+  },
+  {
+    "id": 5,
+    "title": "1984 - George Orwell",
+    "difficulty": "hard",
+    "text": "It was a bright cold day in April, and the clocks were striking thirteen. Winston Smith, his chin nuzzled into his breast in an effort to escape the vile wind, slipped quickly through the glass doors of Victory Mansions, though not quickly enough to prevent a swirl of gritty dust from entering along with him."
+  },
+  {
+    "id": 6,
+    "title": "To Kill a Mockingbird - Harper Lee",
+    "difficulty": "easy",
+    "text": "When he was nearly thirteen, my brother Jem got his arm badly broken at the elbow. When it healed, and Jem's fears of never being able to play football were assuaged, he was seldom self-conscious about his injury."
+  },
+  {
+    "id": 7,
+    "title": "The Catcher in the Rye - J.D. Salinger",
+    "difficulty": "medium",
+    "text": "If you really want to hear about it, the first thing you'll probably want to know is where I was born, and what my lousy childhood was like, and how my parents were occupied and all before they had me, and all that David Copperfield kind of crap, but I don't feel like going into it, if you want to know the truth."
+  },
+  {
+    "id": 8,
+    "title": "Jane Eyre - Charlotte Brontë",
+    "difficulty": "hard",
+    "text": "There was no possibility of taking a walk that day. We had been wandering, indeed, in the leafless shrubbery an hour in the morning; but since dinner the cold winter wind had brought with it clouds so sombre, and a rain so penetrating, that further outdoor exercise was now out of the question."
+  }
+]
